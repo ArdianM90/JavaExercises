@@ -1,6 +1,5 @@
 package com.exercise.exams.accenture.second;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

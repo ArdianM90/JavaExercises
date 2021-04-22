@@ -1,13 +1,10 @@
 package com.exercise;
 
-import com.exercise.exams.accenture.second.AccentureExamsSummary;
-import com.exercise.exams.kodilla.middle.MiddleExamSummary;
+import com.exercise.exams.other.AnagramChecker;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        MiddleExamSummary middleExamSummary = new MiddleExamSummary();
-        AccentureExamsSummary accentureExamsSummary = new AccentureExamsSummary();
-        middleExamSummary.show();
-        accentureExamsSummary.show();
+        AnagramChecker anagramChecker = new AnagramChecker();
+        System.out.println(anagramChecker.checkIfAnagram());
     }
 }
