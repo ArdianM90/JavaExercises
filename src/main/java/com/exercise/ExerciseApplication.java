@@ -1,10 +1,10 @@
 package com.exercise;
 
-import com.exercise.exams.other.AnagramChecker;
+import com.exercise.exams.coderbyte.StringChallengeOne;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        AnagramChecker anagramChecker = new AnagramChecker();
-        System.out.println(anagramChecker.checkIfAnagram());
+        StringChallengeOne stringChallengeOne = new StringChallengeOne();
+        System.out.println("RESULT: "+stringChallengeOne.StringChallenge("wwwbbbw"));
     }
 }
