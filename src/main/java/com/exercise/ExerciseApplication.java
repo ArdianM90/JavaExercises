@@ -1,10 +1,10 @@
 package com.exercise;
 
-import com.exercise.exams.coderbyte.StringChallengeOne;
+import com.exercise.exams.coderbyte.StringChallengeTwo;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        StringChallengeOne stringChallengeOne = new StringChallengeOne();
-        System.out.println("RESULT: "+stringChallengeOne.StringChallenge("wwwbbbw"));
+        StringChallengeTwo stringChallenge = new StringChallengeTwo();
+        System.out.println(stringChallenge.StringChallenge("kjjjhjjj"));
     }
 }
