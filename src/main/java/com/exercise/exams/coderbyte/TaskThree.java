@@ -28,32 +28,33 @@ public class TaskThree {
     //Examples:
     //input: new int {6, 4}, output: 4
     //input: new int {8, 1, 8}, output: 6
-    private List<Integer> occupiedSeats = new ArrayList<>();
+    private final List<Integer> occupiedSeats = new ArrayList<>();
 
-    public int ArrayChallenge(int[] arr) {
+    public int ArrayChallenge(final int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             occupiedSeats.add(arr[i]);
         }
         Set<Set<Integer>> possibilities = new HashSet<>();
         for (int i = 1; i <= arr[0]; i++) {
             if (isValid(arr[0], i)) {
-                Set<Integer> poss1 = new HashSet<>();
-                Set<Integer> poss2 = new HashSet<>();
-                Set<Integer> poss3 = new HashSet<>();
+                Set<Integer> poss;
                 if (isValid(arr[0], i-2)) {
-                    poss1.add(i);
-                    poss1.add(i - 2);
-                    possibilities.add(poss1);
+                    poss = new HashSet<>();
+                    poss.add(i);
+                    poss.add(i - 2);
+                    possibilities.add(poss);
                 }
                 if (isValid(arr[0], i+2)) {
-                    poss2.add(i);
-                    poss2.add(i+2);
-                    possibilities.add(poss2);
+                    poss = new HashSet<>();
+                    poss.add(i);
+                    poss.add(i+2);
+                    possibilities.add(poss);
                 }
                 if (isValid(arr[0], i % 2 == 0 ? i-1 : i+1)) {
-                    poss3.add(i);
-                    poss3.add(i % 2 == 0 ? i-1 : i+1);
-                    possibilities.add(poss3);
+                    poss = new HashSet<>();
+                    poss.add(i);
+                    poss.add(i % 2 == 0 ? i-1 : i+1);
+                    possibilities.add(poss);
                 }
             }
         }
