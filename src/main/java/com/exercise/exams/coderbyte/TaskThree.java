@@ -29,28 +29,30 @@ public class TaskThree {
     //input: new int {6, 4}, output: 4
     //input: new int {8, 1, 8}, output: 6
     private final List<Integer> occupiedSeats = new ArrayList<>();
+    private int seatsQty;
 
     public int ArrayChallenge(final int[] arr) {
+        seatsQty = arr[0];
         for (int i = 1; i < arr.length; i++) {
             occupiedSeats.add(arr[i]);
         }
         Set<Set<Integer>> possibilities = new HashSet<>();
-        for (int i = 1; i <= arr[0]; i++) {
+        for (int i = 1; i <= seatsQty; i++) {
             if (!occupiedSeats.contains(i)) {
                 Set<Integer> poss;
-                if (isValid(arr[0], i-2)) {
+                if (isValid(i-2)) {
                     poss = new HashSet<>();
                     poss.add(i);
                     poss.add(i - 2);
                     possibilities.add(poss);
                 }
-                if (isValid(arr[0], i+2)) {
+                if (isValid(i+2)) {
                     poss = new HashSet<>();
                     poss.add(i);
                     poss.add(i+2);
                     possibilities.add(poss);
                 }
-                if (isValid(arr[0], i % 2 == 0 ? i-1 : i+1)) {
+                if (isValid(i % 2 == 0 ? i-1 : i+1)) {
                     poss = new HashSet<>();
                     poss.add(i);
                     poss.add(i % 2 == 0 ? i-1 : i+1);
@@ -61,7 +63,7 @@ public class TaskThree {
         return possibilities.size();
     }
 
-    private boolean isValid(int seatsQty, int checkedSeatNo) {
+    private boolean isValid(int checkedSeatNo) {
         if (checkedSeatNo <= 0 || checkedSeatNo > seatsQty) {
             return false;
         }
