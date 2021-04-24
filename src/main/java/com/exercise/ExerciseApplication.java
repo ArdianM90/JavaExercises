@@ -1,10 +1,11 @@
 package com.exercise;
 
-import com.exercise.exams.coderbyte.StringChallengeTwo;
+import com.exercise.exams.coderbyte.TaskThree;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        StringChallengeTwo stringChallenge = new StringChallengeTwo();
-        System.out.println(stringChallenge.StringChallenge("kjjjhjjj"));
+        int[] arr = {12, 2, 6, 7, 11};
+        TaskThree arrayChallenge = new TaskThree();
+        System.out.println(arrayChallenge.ArrayChallenge(arr));
     }
 }

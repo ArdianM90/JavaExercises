@@ -1,6 +1,6 @@
 package com.exercise.exams.coderbyte;
 
-public class StringChallengeTwo {
+public class TaskTwo {
     // Have the function StringChallenge(str) take the str parameter being passed and determined if it is possible
     // to create a palindromic string of minimum length 3 characters by removing 1 or 2 characters. For example: if str
     // is "abjchba" then you can remove the characters "jc" to produce "abhba" which is a palindrome. For this example
