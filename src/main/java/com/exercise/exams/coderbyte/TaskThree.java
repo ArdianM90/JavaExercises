@@ -36,7 +36,7 @@ public class TaskThree {
         }
         Set<Set<Integer>> possibilities = new HashSet<>();
         for (int i = 1; i <= arr[0]; i++) {
-            if (isValid(arr[0], i)) {
+            if (!occupiedSeats.contains(i)) {
                 Set<Integer> poss;
                 if (isValid(arr[0], i-2)) {
                     poss = new HashSet<>();
