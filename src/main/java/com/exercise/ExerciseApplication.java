@@ -1,11 +1,10 @@
 package com.exercise;
 
-import com.exercise.exams.coderbyte.TaskThree;
+import com.exercise.exams.coderbyte.FirstReverse;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        int[] arr = {12, 2, 6, 7, 11};
-        TaskThree arrayChallenge = new TaskThree();
-        System.out.println(arrayChallenge.ArrayChallenge(arr));
+        FirstReverse firstReverse = new FirstReverse();
+        System.out.println(firstReverse.firstReverse("coderbyte"));
     }
 }
