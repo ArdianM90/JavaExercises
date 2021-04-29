@@ -9,11 +9,7 @@ public class FirstReverse {
 //    Input: "coderbyte", Output: "etybredoc"
 //    Input: "I Love Code", Output: edoC evoL I
     public String firstReverse(String str) {
-        char[] strArr = str.toCharArray();
-        String result = "";
-        for (int i = strArr.length; i > 0; i--) {
-            result = result.concat(Character.toString(strArr[i-1]));
-        }
-        return result;
+        StringBuilder builder = new StringBuilder(str);
+        return builder.reverse().toString();
     }
 }
