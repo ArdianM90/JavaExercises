@@ -25,8 +25,7 @@ public class TaskTwo {
             return "palindrome";
         }
         for (int i = 0; i < str.length(); i++) {
-            StringBuilder tempSequence = new StringBuilder();
-            tempSequence.append(str);
+            StringBuilder tempSequence = new StringBuilder(str);
             if (i == 0) {
                 tempSequence.deleteCharAt(0);
             } else if (i == str.length()-1) {
@@ -62,6 +61,6 @@ public class TaskTwo {
         StringBuilder builder = new StringBuilder();
         builder.append(str);
         builder.reverse();
-        return str.equals(builder.toString()) && str.length() >= 3;
+        return str.equals(builder.toString());
     }
 }

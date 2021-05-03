@@ -1,10 +1,10 @@
 package com.exercise;
 
-import com.exercise.exams.coderbyte.FirstReverse;
+import com.exercise.exams.coderbyte.LongestWord;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        FirstReverse firstReverse = new FirstReverse();
-        System.out.println(firstReverse.firstReverse("coderbyte"));
+        LongestWord longestWord = new LongestWord();
+        System.out.println("RESULT: "+longestWord.longestWord("!funk!funlk!"));
     }
 }
