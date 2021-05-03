@@ -11,18 +11,17 @@ public class LongestWord {
     public String longestWord(String sen) {
         String result = "";
         char[] senArr = sen.toCharArray();
-        int wordLength = 0;
         for (int i = 0; i < senArr.length; i++) {
             if (Character.isLetter(senArr[i])) {
-                wordLength = 1;
-                while (Character.isLetter(senArr[i+wordLength])) {
+                int wordLength = 1;
+                while (i+wordLength < sen.length() && Character.isLetter(senArr[i+wordLength])) {
                     wordLength++;
                 }
+                if (wordLength > result.length()) {
+                    result = sen.substring(i, i + wordLength);
+                }
+                i = i + wordLength;
             }
-            if (wordLength > result.length()) {
-                result = sen.substring(i, i + wordLength);
-            }
-            i = i + wordLength;
         }
         return result;
     }
