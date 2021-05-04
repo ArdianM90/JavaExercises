@@ -1,5 +1,7 @@
 package com.exercise.exams.other;
 
+import java.io.IOException;
+
 public class ExceptionInTryCatchTest {
     public void run() {
         try {
