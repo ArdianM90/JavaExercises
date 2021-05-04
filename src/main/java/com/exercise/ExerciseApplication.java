@@ -1,10 +1,10 @@
 package com.exercise;
 
-import com.exercise.exams.coderbyte.LongestWord;
+import com.exercise.exams.other.ExceptionInTryCatchTest;
 
 public class ExerciseApplication {
     public static void main(String[] args) {
-        LongestWord longestWord = new LongestWord();
-        System.out.println("RESULT: "+longestWord.longestWord("I love dogs"));
+        ExceptionInTryCatchTest tryCatchTest = new ExceptionInTryCatchTest();
+        tryCatchTest.run();
     }
 }
