@@ -1,12 +1,12 @@
 package com.exercise;
 
-import com.exercise.exams.coderbyte.QuestionMarks;
+import com.exercise.exams.coderbyte.FindIntersection;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ExerciseApplication {
     public static void main(String[] args) {
-        QuestionMarks questionMarks = new QuestionMarks();
-        System.out.println("RESULT: "+questionMarks.questionMarks("mbbv???????????4??????ddsdsdcc9?"));
+        String[] arr = new String[] {"1, 5, 6, 7, 10, 11, 12", "5, 6, 8, 11, 17"};
+        System.out.println(FindIntersection.findIntersection(arr));
     }
 }

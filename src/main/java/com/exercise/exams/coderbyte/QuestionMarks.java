@@ -11,7 +11,7 @@ public class QuestionMarks {
 //    Examples:
 //    Input: "aa6?9", Output: false
 //    Input: "acc?7??sss?3rr1??????5", Output: true
-    public boolean questionMarks(String str) {
+    public static boolean questionMarks(String str) {
         boolean result = false;
         int num = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -27,10 +27,10 @@ public class QuestionMarks {
                             qmQty++;
                         }
                     }
-                    if (qmQty != 3) {
-                        return false;
-                    } else {
+                    if (qmQty == 3) {
                         result = true;
+                    } else {
+                        return false;
                     }
                 }
                 num = Character.getNumericValue(str.charAt(i));
