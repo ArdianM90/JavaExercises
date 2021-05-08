@@ -8,9 +8,6 @@ class QuestionMarksTestSuite {
     @Test
     public void shouldReturnTrue() {
         //Given
-        QuestionMarks questionMarks = new QuestionMarks();
-
-        //When
         String case1 = "5???5";
         String case2 = "a5???5";
         String case3 = "5???5a";
@@ -21,24 +18,21 @@ class QuestionMarksTestSuite {
         String case8 = "aaa3???5???5a";
         String case9 = "acc?7??sss?3rr1??????5";
 
-        //Then
-        assertTrue(questionMarks.questionMarks(case1));
-        assertTrue(questionMarks.questionMarks(case2));
-        assertTrue(questionMarks.questionMarks(case3));
-        assertTrue(questionMarks.questionMarks(case4));
-        assertTrue(questionMarks.questionMarks(case5));
-        assertTrue(questionMarks.questionMarks(case6));
-        assertTrue(questionMarks.questionMarks(case7));
-        assertTrue(questionMarks.questionMarks(case8));
-        assertTrue(questionMarks.questionMarks(case9));
+        //When&Then
+        assertTrue(QuestionMarks.questionMarks(case1));
+        assertTrue(QuestionMarks.questionMarks(case2));
+        assertTrue(QuestionMarks.questionMarks(case3));
+        assertTrue(QuestionMarks.questionMarks(case4));
+        assertTrue(QuestionMarks.questionMarks(case5));
+        assertTrue(QuestionMarks.questionMarks(case6));
+        assertTrue(QuestionMarks.questionMarks(case7));
+        assertTrue(QuestionMarks.questionMarks(case8));
+        assertTrue(QuestionMarks.questionMarks(case9));
     }
 
     @Test
     public void shouldReturnFalse() {
         //Given
-        QuestionMarks questionMarks = new QuestionMarks();
-
-        //When
         String case1 = "";
         String case2 = "??";
         String case3 = "3???5";
@@ -47,13 +41,13 @@ class QuestionMarksTestSuite {
         String case6 = "5??aaaaaaaaaaaaaaaaaaa?5?5";
         String case7 = "mbbv???????????4??????ddsdsdcc9?";
 
-        //Then
-        assertFalse(questionMarks.questionMarks(case1));
-        assertFalse(questionMarks.questionMarks(case2));
-        assertFalse(questionMarks.questionMarks(case3));
-        assertFalse(questionMarks.questionMarks(case4));
-        assertFalse(questionMarks.questionMarks(case5));
-        assertFalse(questionMarks.questionMarks(case6));
-        assertFalse(questionMarks.questionMarks(case7));
+        //When&Then
+        assertFalse(QuestionMarks.questionMarks(case1));
+        assertFalse(QuestionMarks.questionMarks(case2));
+        assertFalse(QuestionMarks.questionMarks(case3));
+        assertFalse(QuestionMarks.questionMarks(case4));
+        assertFalse(QuestionMarks.questionMarks(case5));
+        assertFalse(QuestionMarks.questionMarks(case6));
+        assertFalse(QuestionMarks.questionMarks(case7));
     }
 }
