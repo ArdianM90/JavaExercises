@@ -24,15 +24,12 @@ public class FindIntersection {
                     resultList.add(firstEl);
                 }
         });
+
         if (resultList.size() == 0) {
             return "false";
         } else {
-            StringBuilder builder = new StringBuilder();
-            for (String el : resultList) {
-                builder.append(el).append(",");
-            }
-            String result = builder.toString();
-            return result.substring(0, result.length()-1);
+            String result = resultList.toString();
+            return result.substring(1, result.length()-1).replaceAll("\\s","");
         }
     }
 }
