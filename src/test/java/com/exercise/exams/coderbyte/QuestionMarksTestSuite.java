@@ -1,7 +1,6 @@
 package com.exercise.exams.coderbyte;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,6 +19,7 @@ class QuestionMarksTestSuite {
         String case6 = "5???5aaa";
         String case7 = "aaa5???5";
         String case8 = "aaa3???5???5a";
+        String case9 = "acc?7??sss?3rr1??????5";
 
         //Then
         assertTrue(questionMarks.questionMarks(case1));
@@ -30,6 +30,7 @@ class QuestionMarksTestSuite {
         assertTrue(questionMarks.questionMarks(case6));
         assertTrue(questionMarks.questionMarks(case7));
         assertTrue(questionMarks.questionMarks(case8));
+        assertTrue(questionMarks.questionMarks(case9));
     }
 
     @Test
@@ -43,6 +44,8 @@ class QuestionMarksTestSuite {
         String case3 = "3???5";
         String case4 = "aa???5a";
         String case5 = "aaa3?s?7???5a";
+        String case6 = "5??aaaaaaaaaaaaaaaaaaa?5?5";
+        String case7 = "mbbv???????????4??????ddsdsdcc9?";
 
         //Then
         assertFalse(questionMarks.questionMarks(case1));
@@ -50,5 +53,7 @@ class QuestionMarksTestSuite {
         assertFalse(questionMarks.questionMarks(case3));
         assertFalse(questionMarks.questionMarks(case4));
         assertFalse(questionMarks.questionMarks(case5));
+        assertFalse(questionMarks.questionMarks(case6));
+        assertFalse(questionMarks.questionMarks(case7));
     }
 }

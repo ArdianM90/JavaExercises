@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ExerciseApplication {
     public static void main(String[] args) {
         QuestionMarks questionMarks = new QuestionMarks();
-        System.out.println("RESULT: "+questionMarks.questionMarks("aa4???6kk"));
+        System.out.println("RESULT: "+questionMarks.questionMarks("mbbv???????????4??????ddsdsdcc9?"));
     }
 }
