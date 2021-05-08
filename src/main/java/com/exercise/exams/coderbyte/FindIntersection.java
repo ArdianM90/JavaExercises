@@ -19,17 +19,12 @@ public class FindIntersection {
         String[] secondArr = strArr[1].split(", ");
         List<String> resultList = new ArrayList<>();
         Arrays.stream(firstArr).forEach(firstEl -> {
-                Optional<String> intersection = Arrays.stream(secondArr).filter(secondEl -> secondEl.equals(firstEl)).findAny();
-                if (intersection.isPresent()) {
-                    resultList.add(firstEl);
-                }
+                Optional<String> intersection = Arrays.stream(secondArr)
+                        .filter(secondEl -> secondEl.equals(firstEl))
+                        .findAny();
+                intersection.ifPresent(resultList::add);
         });
-
-        if (resultList.size() == 0) {
-            return "false";
-        } else {
-            String result = resultList.toString();
-            return result.substring(1, result.length()-1).replaceAll("\\s","");
-        }
+        String result = resultList.toString();
+        return resultList.size() == 0 ? "false" : result.substring(1, result.length()-1).replaceAll("\\s","");
     }
 }
