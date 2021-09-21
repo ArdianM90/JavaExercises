@@ -16,7 +16,7 @@ public class CodelandUsernameValidation {
             return "false";
         }
         for (int i = 1; i < str.length(); i++) {
-            if (!Character.isLetter(str.charAt(i)) && !Character.isDigit(str.charAt(i)) && str.charAt(i) != '_') {
+            if (!Character.isLetterOrDigit(str.charAt(i)) && str.charAt(i) != '_') {
                 return "false";
             }
         }
