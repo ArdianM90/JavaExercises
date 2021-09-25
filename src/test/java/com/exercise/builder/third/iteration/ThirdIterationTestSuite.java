@@ -25,8 +25,19 @@ class ThirdIterationTestSuite {
         // then
         assertEquals("John", pilot.getName());
         assertEquals(200.0, pilot.getSalary());
-        assertEquals(2, pilot.getDuties().size());
+        assertEquals(1, pilot.getDuties().size());
         assertEquals("ENG", pilot.getLanguage());
+    }
+
+    @Test
+    public void shouldWorkMethodsBeDifferent() {
+        // given & when
+        Engineer engineer = createMockEngineer();
+        Pilot pilot = createMockPilot();
+
+        // then
+        assertEquals("Implementing and testing...", engineer.work());
+        assertEquals("Flying the plane...", pilot.work());
     }
 
     private Engineer createMockEngineer() {
@@ -43,8 +54,7 @@ class ThirdIterationTestSuite {
         return new PilotBuilder()
                 .name("John")
                 .salary(200.0)
-                .addDuty("engineering")
-                .addDuty("making money")
+                .addDuty("flying")
                 .language("ENG")
                 .build();
     }

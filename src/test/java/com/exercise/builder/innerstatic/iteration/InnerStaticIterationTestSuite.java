@@ -1,11 +1,10 @@
-package com.exercise.builder.second.iteration;
+package com.exercise.builder.innerstatic.iteration;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class SecondIterationTestSuite {
+class InnerStaticIterationTestSuite {
     @Test
     public void shouldCreateProperEngineerViaBuilder() {
         // given & when
@@ -15,6 +14,7 @@ class SecondIterationTestSuite {
         assertEquals("John", engineer.getName());
         assertEquals(200.0, engineer.getSalary());
         assertEquals(2, engineer.getDuties().size());
+        assertEquals("wrenches", engineer.getTools());
     }
 
     @Test
@@ -26,33 +26,36 @@ class SecondIterationTestSuite {
         assertEquals("John", pilot.getName());
         assertEquals(200.0, pilot.getSalary());
         assertEquals(1, pilot.getDuties().size());
+        assertEquals("ENG", pilot.getLanguage());
     }
 
     @Test
-    public void shouldWorkValuesBeDifferent() {
+    public void shouldWorkMethodsBeDifferent() {
         // given & when
         Engineer engineer = createMockEngineer();
         Pilot pilot = createMockPilot();
 
-        //then
-        assertNotEquals(engineer.work(), pilot.work());
-
+        // then
+        assertEquals("Implementing and testing...", engineer.work());
+        assertEquals("Flying the plane...", pilot.work());
     }
 
     private Engineer createMockEngineer() {
-        return new EngineerBuilder()
+        return new Engineer.Builder()
                 .name("John")
                 .salary(200.0)
                 .addDuty("engineering")
                 .addDuty("making money")
+                .tools("wrenches")
                 .build();
     }
 
     private Pilot createMockPilot() {
-        return new PilotBuilder()
+        return new Pilot.Builder()
                 .name("John")
                 .salary(200.0)
                 .addDuty("flying")
+                .language("ENG")
                 .build();
     }
 }
