@@ -1,4 +1,4 @@
-package com.exercise.builder.third.iteration;
+package com.exercise.builder.asconstructorarg.iteration;
 
 public interface ProfessionBuilder<SELF extends ProfessionBuilder<SELF, TTARGET>, TTARGET extends Profession> {
 
@@ -8,5 +8,5 @@ public interface ProfessionBuilder<SELF extends ProfessionBuilder<SELF, TTARGET>
 
     SELF addDuty(String duty);
 
-    TTARGET build();
+    SELF build();
 }

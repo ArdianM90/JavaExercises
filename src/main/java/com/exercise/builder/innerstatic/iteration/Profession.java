@@ -26,8 +26,8 @@ public abstract class Profession {
                 .toString();
     }
 
-    public static abstract class Builder<SELF extends ProfessionBuilder<SELF, TTarget>,
-            TTarget extends Profession> implements ProfessionBuilder<SELF, TTarget> {
+    public static abstract class Builder<SELF extends ProfessionBuilder<SELF, TTARGET>,
+            TTARGET extends Profession> implements ProfessionBuilder<SELF, TTARGET> {
 
         String name;
 
@@ -53,11 +53,11 @@ public abstract class Profession {
             return self();
         }
 
-        public TTarget build() {
+        public TTARGET build() {
             return internalBuild();
         }
 
-        protected abstract TTarget internalBuild();
+        protected abstract TTARGET internalBuild();
 
         private SELF self() {
             return (SELF) this;

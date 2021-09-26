@@ -1,4 +1,4 @@
-package com.exercise.builder.third.iteration;
+package com.exercise.builder.asconstructorarg.iteration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +30,11 @@ public abstract class AbstractProfessionBuilder<SELF extends ProfessionBuilder<S
         return self();
     }
 
-    public TTARGET build() {
+    public SELF build() {
         return internalBuild();
     }
 
-    protected abstract TTARGET internalBuild();
+    protected abstract SELF internalBuild();
 
     private SELF self() {
         return (SELF) this;
