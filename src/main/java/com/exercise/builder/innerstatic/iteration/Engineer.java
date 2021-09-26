@@ -19,7 +19,7 @@ public class Engineer extends Profession {
         return "Implementing and testing...";
     }
 
-    public static class Builder extends AbstractProfessionBuilder<Builder, Engineer> {
+    public static class Builder extends Profession.Builder<Builder, Engineer> {
 
         private String tools;
 

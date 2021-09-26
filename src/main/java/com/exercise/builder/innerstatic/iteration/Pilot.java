@@ -19,7 +19,7 @@ public class Pilot extends Profession {
         return "Flying the plane...";
     }
 
-    public static class Builder extends AbstractProfessionBuilder<Builder, Pilot> {
+    public static class Builder extends Profession.Builder<Builder, Pilot> {
 
         private String language;
 

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -23,5 +24,43 @@ public abstract class Profession {
                 .append("Salary", salary)
                 .append("Duties", duties)
                 .toString();
+    }
+
+    public static abstract class Builder<SELF extends ProfessionBuilder<SELF, TTarget>,
+            TTarget extends Profession> implements ProfessionBuilder<SELF, TTarget> {
+
+        String name;
+
+        double salary;
+
+        List<String> duties = new ArrayList<>();
+
+        @Override
+        public SELF name(String name) {
+            this.name = name;
+            return self();
+        }
+
+        @Override
+        public SELF salary(double salary) {
+            this.salary = salary;
+            return self();
+        }
+
+        @Override
+        public SELF addDuty(String duty) {
+            duties.add(duty);
+            return self();
+        }
+
+        public TTarget build() {
+            return internalBuild();
+        }
+
+        protected abstract TTarget internalBuild();
+
+        private SELF self() {
+            return (SELF) this;
+        }
     }
 }
